@@ -165,11 +165,11 @@ document.getElementById('colonize').addEventListener('click', function() {
 });
 
 document.getElementById('givetechbtn').addEventListener('click', function() {
-    socket.emit('giveTech', document.getElementById('techVal').value, selected);
+    socket.emit('giveTech', parseInt(document.getElementById('techVal').value), selected);
 });
 
 document.getElementById('attackbtn').addEventListener('click', function () {
-    socket.emit('attack', document.getElementById('techVal').value, selected, selectedStar);
+    socket.emit('attack', parseInt(document.getElementById('techVal').value), selected, selectedStar);
 });
 
 // Events

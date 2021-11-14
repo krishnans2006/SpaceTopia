@@ -16,7 +16,6 @@ function addTech() {
     for (data in civs) {
         let currPlayer = io.sockets.connected[data.id];
         currPlayer.data.technology += currPlayer.data.techMultiplier;
-vvv
         currPlayer.emit('technology', currentPlayer.data.technology, currPlayer.data.stars.length);
     }
 }
@@ -75,7 +74,7 @@ io.on('connection', (socket) => {
     setInterval(function () {
         socket.data.technology += socket.data.stars.length;
         socket.emit('technology', socket.data.technology, socket.data.stars.length);
-    }, 1000);
+    }, 10000);
 
     // Colonize
     socket.on('colonize', () => {
